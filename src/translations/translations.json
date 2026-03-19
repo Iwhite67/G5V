@@ -15,6 +15,7 @@
       "Logout": "Logout",
       "DarkMode": "Toggle Dark Mode",
       "PlayerLeader": "Player Leaderboard",
+      "ImageSettings": "Image Settings",
       "Home": "Home"
     },
     "Login": {
@@ -382,6 +383,7 @@
       "Logout": "Déconnexion",
       "DarkMode": "Action le mode sombre",
       "PlayerLeader": "Classement des joueurs",
+      "ImageSettings": "Paramètres des images",
       "Home": "Accueil"
     },
     "Login": {
@@ -749,6 +751,7 @@
       "Logout": "ログアウト",
       "DarkMode": "ダークモードを切り替えます",
       "PlayerLeader": "プレイヤーリーダーボード",
+      "ImageSettings": "画像設定",
       "Home": "ホーム"
     },
     "Login": {

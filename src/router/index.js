@@ -183,6 +183,14 @@ const routes = [
       import(
         /* webpackChunkName: "Leaderboards" */ "../views/TeamLeaderboard.vue"
       )
+  },
+  {
+    path: "/image-settings",
+    name: "ImageSettings",
+    component: () =>
+      import(
+        /* webpackChunkName: "ImageSettings" */ "../views/ImageSettings.vue"
+      )
   }
 ];
 

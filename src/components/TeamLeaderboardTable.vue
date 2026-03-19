@@ -16,6 +16,18 @@
           {{ $t("Leaderboard.TTitle") }}
         </v-toolbar>
       </template>
+      <template v-slot:item.actions="{ item }">
+        <v-btn
+          v-if="seasonid"
+          x-small
+          color="secondary"
+          :href="GetTeamSeasonImageUrl(seasonid, item.id)"
+          target="_blank"
+        >
+          <v-icon left x-small>mdi-image</v-icon>
+          Image
+        </v-btn>
+      </template>
     </v-data-table>
   </v-container>
 </template>
@@ -59,6 +71,12 @@ export default {
         {
           text: this.$t("Leaderboard.TDiff"),
           value: "rounddiff",
+          groupable: false
+        },
+        {
+          text: "",
+          value: "actions",
+          sortable: false,
           groupable: false
         }
       ];

@@ -109,6 +109,15 @@
               {{ $t("Navbar.PlayerLeader") }}
             </v-list-item-title>
           </v-list-item>
+
+          <v-list-item
+            v-if="user.admin || user.super_admin"
+            :to="'/image-settings'"
+          >
+            <v-list-item-title>{{
+              $t("Navbar.ImageSettings")
+            }}</v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>

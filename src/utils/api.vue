@@ -1249,7 +1249,7 @@ export default {
       }
       return message;
     },
-    async register(userinfo) {
+    async registerUser(userinfo) {
       let message;
       let res;
       try {
@@ -1453,6 +1453,51 @@ export default {
         console.log("HELPER GetRating Failed -- " + err);
         return 0;
       }
+    },
+    // IMAGE SETTINGS
+    async GetImageFonts() {
+      const res = await this.axioCall.get(
+        `${process.env?.VUE_APP_G5V_API_URL || "/api"}/image/fonts`
+      );
+      return res.data;
+    },
+    async GetImageSettings() {
+      const res = await this.axioCall.get(
+        `${process.env?.VUE_APP_G5V_API_URL || "/api"}/image/settings`
+      );
+      return res.data;
+    },
+    async SaveImageSettings(settings) {
+      const res = await this.axioCall.put(
+        `${process.env?.VUE_APP_G5V_API_URL || "/api"}/image/settings`,
+        settings
+      );
+      return res.data;
+    },
+    async UploadImageBackground(formData) {
+      const res = await this.axioCall.post(
+        `${process.env?.VUE_APP_G5V_API_URL ||
+          "/api"}/image/settings/background`,
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      return res.data;
+    },
+    async UploadImageFont(formData) {
+      const res = await this.axioCall.post(
+        `${process.env?.VUE_APP_G5V_API_URL || "/api"}/image/settings/font`,
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      return res.data;
+    },
+    GetPlayerImageUrl(matchId, steamId) {
+      return `${process.env?.VUE_APP_G5V_API_URL ||
+        "/api"}/image/match/${matchId}/player/${steamId}`;
+    },
+    GetTeamSeasonImageUrl(seasonId, teamId) {
+      return `${process.env?.VUE_APP_G5V_API_URL ||
+        "/api"}/image/season/${seasonId}/team/${teamId}`;
     }
   }
 };
